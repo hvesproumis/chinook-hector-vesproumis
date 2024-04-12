@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des albums</title>
+</head>
+<body>
+    <h1>Liste des Albums</h1>
+    <ul>
+        {% for album in albums %}
+            <li><a href="{% url 'album_detail' album.id %}">{{ album.title }} - {{ album.artist.name }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

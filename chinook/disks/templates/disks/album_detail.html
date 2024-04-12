@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Informations sur l'album</title>
+</head>
+<body>
+    <h1>{{ album.title }} - {{ album.artist.name }}</h1>
+    <h2>Tracks</h2>
+    <ul>
+        {% for track in tracks %}
+            <li>{{ track.name }} - {{ track.composer }} - {{ track.milliseconds|time:"i:s" }} - {{ track.unitPrice }}€</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'album_list' %}">Retour à la liste des albums</a>
+</body>
+</html>
