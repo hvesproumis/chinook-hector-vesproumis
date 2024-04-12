@@ -5,7 +5,7 @@ def album_list(request):
     query = request.GET.get('search', '')
     if query:
         albums = Album.objects.filter(title__icontains=query)
-    else:
+    else :
         albums = Album.objects.all()
 
     return render(request, 'disks/album_list.html', {'albums': albums, 'query': query})
