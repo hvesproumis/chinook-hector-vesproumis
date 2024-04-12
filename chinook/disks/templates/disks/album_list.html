@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Liste des albums</title>
-</head>
-<body>
+{% extends 'disks/base.html' %}
+
+{% block title %}Liste des Albums{% endblock %}
+
+{% block content %}
     <h1>Liste des Albums</h1>
+      
     <form action="" method="get">
         <input type="text" name="search" value="{{ query }}" placeholder="Recherche par titre...">
         <button type="submit">Rechercher</button>
@@ -15,5 +14,4 @@
             <li><a href="{% url 'album_detail' album.id %}">{{ album.title }} - {{ album.artist.name }}</a></li>
         {% endfor %}
     </ul>
-</body>
-</html>
+{% endblock %}
